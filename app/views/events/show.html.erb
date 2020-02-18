@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+			<h2> Event <%= @event.title %> </h2>
+			<p> Start Date: <%= @event.start_date	 %></p>
+			<p> End Date: <%= @event.start_date	 %></p>
+			<p> Duration: <%= @event.duration %>min</p>
+			<p> Info: <%= @event.description %></p>
+			<p> Price: <%= @event.price %></p>
+			<p> Location: <%= @event.location %></p>
+			<p> Admin: <%= link_to @event.admin.email, user_path(@event.admin.id) %></p>
+			<p> participants: <%= @attendances %></p>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,23 @@
+<div class="jumbotron">
+    <div class="container">
+      <h1 class="display-3">Never get bored again.</h1>
+    </div>
+ </div>
+
+
+
+ <div class="card-columns">
+	<% @events.each do |event| %>
+		<div class="card">
+  		<h5 class="card-title">Event <%= event.id %></h5>
+  		<div class="card-text"><%= link_to event.title , event_path(event.id)%></div>
+
+  		<% if event.admin.first_name != nil %>
+  			<div class="card-link"> <small> by <%= event.admin.first_name %> </small></div>
+  		<%else %>
+  			<div class="card-link"> <small> by <%= event.admin.email %> </small></div>
+  		<%end %>
+  		<div class="card-link"> <small> Participants: <%= event.attendances.count %> </small></div>
+		</div> 
+<% end %>
+</div>

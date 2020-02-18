@@ -1,0 +1,14 @@
+<h2> User <%= @user.first_name %> <%= @user.last_name %> </h2>
+<p> email: <%= @user.email %></p>
+<p> Info: <%= @user.description %></p>
+
+
+<div class="card-columns">
+	<% @events.each do |event| %>
+		<div class="card">
+  		<h5 class="card-title">Event <%= event.id %></h5>
+  		<div class="card-text"><%= link_to event.title , event_path(event.id)%></div>
+  		<div class="card-link"> <small> by <%= event.admin.first_name %> </small></div>
+		</div> 
+<% end %>
+</div>
